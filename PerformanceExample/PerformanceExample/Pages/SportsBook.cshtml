@@ -1,0 +1,30 @@
+﻿@page
+@model PerformanceExample.SportsBookModel
+@{
+    ViewData["Title"] = "SportsBook";
+}
+
+
+<!-- bradcam_area_start -->
+<div class="bradcam_area breadcam_bg">
+    <h3>Sportsbook</h3>
+</div>
+<!-- bradcam_area_end -->
+<!-- Start Sample Area -->
+<section class="sample-text-area">
+    <div class="container box_1170">
+        <h3 class="text-heading">Welcome</h3>
+        <p class="sample-text">
+            Welcome to our new sportsbook. Just in time for the SuperBowl. Please place your bet below.<br />
+            So far we have had {{appVm.amountBet | currency}} in placed bets<br />
+            Current odds are:<br />
+            Kansas City {{appVm.kansasOdds}}<br/>
+            San Francisco {{appVm.sanFranOdds}}
+        </p>
+        <p class="sample-text">
+            Place your bet: <br />
+            Kansas city <input type="number" id="kansasAmount" ng-model="appVm.amountKansas" /><a ng-click="appVm.betKC()" class="genric-btn default">Bet KC</a><br />
+            San Francisco <input type="number" id="sanFranAmount" ng-model="appVm.amountSanFran" /><a ng-click="appVm.betSF()" class="genric-btn default">Bet SF</a><br />
+        </p>
+    </div>
+</section>
