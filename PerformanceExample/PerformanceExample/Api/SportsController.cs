@@ -52,6 +52,20 @@ namespace PerformanceExample.Api
             return info;
         }
 
+        [HttpGet("setupProd")]
+        public void SetupProd()
+        {
+            var info = new BookInfo();
+            var betService = new BetService();
+            for (int i = 0; i < 100000; i++)
+            {
+                var randomAmount = new Random(DateTime.Now.Millisecond).Next(0, 9999);
+                var randomTeam = DateTime.Now.Millisecond % 2 == 0 ? 1 : 2;
+                var randomCurrency = DateTime.Now.Millisecond % 5 == 0 ? 2 : 1;
+                betService.AddBet(new Bet {Amount = randomAmount, BetDate = DateTime.Now, CurrencyType = randomTeam, Team = randomCurrency});
+            }
+        }
+
         private BookInfo GetBookInfo(List<Bet> bets)
         {
             var bookInfo = new BookInfo();

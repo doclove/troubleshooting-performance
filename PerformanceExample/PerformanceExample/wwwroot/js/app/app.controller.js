@@ -9,12 +9,12 @@
             function ($scope,sportsService) {
                 var vm = this;
 
-                vm.amountBet = "1000";
+                vm.amountBet = '';
                 vm.betKC = betKC;
                 vm.betSF = betSF;
                 vm.amountKansas = 0;
                 vm.amountSanFran = 0;
-                vm.kansasOdds = '-4';
+                vm.kansasOdds = '';
                 vm.sanFranOdds = '';
 
                 activate();

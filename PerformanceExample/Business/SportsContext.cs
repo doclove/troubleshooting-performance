@@ -11,9 +11,12 @@ namespace Business
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(
-                @"Server=.\;Database=SportsBook;Trusted_Connection=True;MultipleActiveResultSets=true");
+            //optionsBuilder.UseSqlServer(
+            //    @"Server=.\;Database=SportsBook;Trusted_Connection=True;MultipleActiveResultSets=true");
             
+            optionsBuilder.UseSqlServer(
+                @"Server=.\;Database=SportsBook-prod;Trusted_Connection=True;MultipleActiveResultSets=true");
+
             base.OnConfiguring(optionsBuilder);
         }
 
