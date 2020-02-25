@@ -27,5 +27,11 @@
             Kansas city <input type="number" id="kansasAmount" ng-model="appVm.amountKansas" /><a ng-click="appVm.betKC()" class="genric-btn default">Bet KC</a><br />
             San Francisco <input type="number" id="sanFranAmount" ng-model="appVm.amountSanFran" /><a ng-click="appVm.betSF()" class="genric-btn default">Bet SF</a><br />
         </p>
+        <p class="text-heading">Last 10 bets</p>
+        <p class="sample-text">
+            <div ng-repeat="bet in appVm.bets">
+                <span>{{bet.teamName}}</span> - <span>{{bet.amount | currency}}</span>
+            </div>
+        </p>
     </div>
 </section>

@@ -11,7 +11,8 @@
                 var service = {
                     getLatest: getLatest,
                     placeKCBet: placeKCBet,
-                    placeSanFranBet: placeSanFranBet
+                    placeSanFranBet: placeSanFranBet,
+                    getBets: getBets
                 };
 
                 return service;
@@ -38,6 +39,12 @@
                         .then(function (response) {
                             return response.data;
                         });
+                }
+
+                function getBets() {
+                    return $http.get('/api/sports/getBets').then(function (response) {
+                        return response.data;
+                    });
                 }
             }
         ]

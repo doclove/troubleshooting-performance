@@ -16,6 +16,7 @@
                 vm.amountSanFran = 0;
                 vm.kansasOdds = '';
                 vm.sanFranOdds = '';
+                vm.bets = [];
 
                 activate();
 
@@ -25,6 +26,8 @@
                         vm.kansasOdds = data.kansasOdds;
                         vm.sanFranOdds = data.sanFranOdds;
                     });
+
+                    getBets();
                 }
 
                 function betKC() {
@@ -32,6 +35,7 @@
                         vm.amountBet = data.amountBet;
                         vm.kansasOdds = data.kansasOdds;
                         vm.sanFranOdds = data.sanFranOdds;
+                        getBets();
                     });
                 }
 
@@ -40,6 +44,13 @@
                         vm.amountBet = data.amountBet;
                         vm.kansasOdds = data.kansasOdds;
                         vm.sanFranOdds = data.sanFranOdds;
+                        getBets();
+                    });
+                }
+
+                function getBets() {
+                    sportsService.getBets().then(function (data) {
+                        vm.bets = data.slice(0, 10);
                     });
                 }
             }
